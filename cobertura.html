@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WEB+ TELECOM — Internet Fibra Óptica</title>
-<meta name="description" content="Internet fibra óptica de alta velocidade. Planos a partir de R$60. Suporte descomplicado e cobertura ampla.">
+<title>Cobertura — WEB+ TELECOM</title>
+<meta name="description" content="Consulte a área de cobertura da internet fibra óptica WEB+ TELECOM.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -361,18 +361,108 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
   .speed{font-size:3.4rem}
   .strip-grid{justify-content:flex-start}
 }
+
+/* ---------- Page hero (Planos) ---------- */
+.page-hero{
+  position:relative;overflow:hidden;
+  background:radial-gradient(1000px 600px at 80% -20%,#2A2F6E 0%,var(--ink) 55%);
+  color:var(--white);padding:150px 0 90px;text-align:center;
+}
+.page-hero h1{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;margin:16px 0 14px}
+.page-hero p{color:#B9C0E4;font-size:1.08rem;max-width:620px;margin:0 auto}
+.page-hero .fiber{opacity:.7}
+
+.plans-page{padding:90px 0 100px}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pcard{
+  position:relative;border:1.5px solid #E7EAF6;border-radius:22px;padding:38px 28px 32px;
+  display:flex;flex-direction:column;background:var(--white);text-align:center;
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+.pcard:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--beam)}
+.pcard .rocket{
+  width:64px;height:64px;margin:0 auto 18px;border-radius:18px;
+  background:linear-gradient(135deg,rgba(56,225,255,.14),rgba(124,92,255,.14));
+  display:grid;place-items:center;
+}
+.pcard .rocket img{width:32px}
+.pcard .mb{font-family:'Sora',sans-serif;font-weight:800;font-size:2.2rem;letter-spacing:-.03em}
+.pcard .mb small{font-size:1rem;color:var(--beam-2)}
+.pcard .val{margin:8px 0 2px}
+.pcard .val strong{font-family:'Sora',sans-serif;font-size:1.7rem}
+.pcard .val span{font-size:.9rem;color:var(--muted-dark)}
+.pcard .fine{font-size:.74rem;color:var(--muted);margin-bottom:20px}
+.pcard ul{list-style:none;margin:6px 0 26px;display:grid;gap:11px;text-align:left}
+.pcard li{font-size:.88rem;display:flex;gap:9px;align-items:flex-start;color:var(--muted-dark)}
+.pcard li::before{content:"✓";color:var(--beam-2);font-weight:700;flex-shrink:0}
+.pcard .btn{margin-top:auto;width:100%}
+.pcard.hot{border-color:var(--ink);background:linear-gradient(165deg,var(--ink) 0%,var(--ink-3) 100%);color:var(--white)}
+.pcard.hot li{color:#C6CCEA}
+.pcard.hot li::before{color:var(--lime)}
+.pcard.hot .val span,.pcard.hot .fine{color:#B9C0E4}
+.pcard.hot .mb small{color:var(--beam)}
+.pcard .badge{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  background:var(--lime);color:var(--ink);
+  font-family:'Sora',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;
+}
+@media(max-width:1000px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.pgrid{grid-template-columns:1fr}.page-hero{padding:120px 0 70px}}
+
+
+/* ---------- Forms ---------- */
+.form-card{background:var(--white);border:1.5px solid #E7EAF6;border-radius:22px;padding:40px 36px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-grid .full{grid-column:1/-1}
+.field label{display:block;font-family:'Sora',sans-serif;font-weight:600;font-size:.85rem;margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 16px;border:1.5px solid #E7EAF6;border-radius:12px;
+  font-family:'Inter',sans-serif;font-size:.95rem;color:var(--ink);background:var(--cloud);
+  transition:border-color .15s, background .15s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--beam-2);background:var(--white)}
+.field textarea{min-height:130px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--muted-dark)}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:var(--beam-2)}
+.check a{color:var(--beam-2);font-weight:600}
+.check a:hover{text-decoration:underline}
+.form-note{font-size:.8rem;color:var(--muted);margin-top:14px}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:760px;margin:0 auto;display:grid;gap:14px}
+.faq-item{border:1.5px solid #E7EAF6;border-radius:16px;overflow:hidden;transition:border-color .2s}
+.faq-item[open]{border-color:var(--beam-2)}
+.faq-item summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:20px 24px;font-family:'Sora',sans-serif;font-weight:600;font-size:1rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:1.5rem;color:var(--beam-2);transition:transform .2s;flex-shrink:0}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item .a{padding:0 24px 22px;color:var(--muted-dark);font-size:.95rem}
+
+/* ---------- Empresa / Cobertura ---------- */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-grid img.rocket-big{max-width:300px;width:70%;margin:0 auto;display:block}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.stat{border:1.5px solid #E7EAF6;border-radius:16px;padding:22px;text-align:center}
+.stat b{font-family:'Sora',sans-serif;font-size:1.6rem;display:block;color:var(--beam-2)}
+.stat span{font-size:.82rem;color:var(--muted-dark)}
+.map-big{width:100%;border-radius:22px;box-shadow:var(--shadow)}
+@media(max-width:900px){.story-grid,.form-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap nav">
     <a href="index.html" class="logo"><img src="https://webmaistelecompe.com.br/images/logo.png" alt="WEB+ TELECOM" style="height:44px;display:block"></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" style="color:var(--beam)">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="empresa.html">Empresa</a></li>
       <li><a href="planos.html">Planos</a></li>
-      <li><a href="cobertura.html">Cobertura</a></li>
+      <li><a href="cobertura.html" style="color:var(--beam)">Cobertura</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
@@ -385,181 +475,30 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
   </div>
 </header>
 
-<section class="hero">
+<section class="page-hero">
   <div class="fiber" aria-hidden="true">
-    <div class="line" style="top:22%"></div>
-    <div class="pulse" style="top:22%;animation-delay:0s"></div>
-    <div class="line" style="top:48%"></div>
-    <div class="pulse" style="top:48%;animation-delay:2.2s"></div>
-    <div class="line" style="top:74%"></div>
-    <div class="pulse" style="top:74%;animation-delay:4.1s"></div>
+    <div class="line" style="top:30%"></div>
+    <div class="pulse" style="top:30%;animation-delay:0s"></div>
+    <div class="line" style="top:65%"></div>
+    <div class="pulse" style="top:65%;animation-delay:2.5s"></div>
   </div>
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow" style="color:var(--beam)">Internet 100% fibra óptica</span>
-      <h1>Navegue na <em>velocidade da luz</em>, sem limites.</h1>
-      <p>Ultra velocidade, estabilidade e atendimento descomplicado para você ficar mega conectado com o mundo. Tire suas dúvidas ou faça sua assinatura agora mesmo pelo WhatsApp!</p>
-      <div class="hero-actions">
-        <a href="https://wa.me/558184824616" target="_blank" rel="noopener" class="btn btn-whats">💬 Chamar no WhatsApp</a>
-        <a href="#planos" class="btn btn-ghost">Ver planos</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="gauge"><b>até<br>1 GIGA</b></div>
-      <span class="tag">O mais vendido</span>
-      <div class="speed">150 <small>MEGA</small></div>
-      <p class="price">por <strong>R$ 60</strong>/mês</p>
-      <p class="fine">*Pagando até o vencimento.</p>
-      <a href="cadastro.html" class="btn btn-primary">Eu quero este plano</a>
-    </div>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow" style="color:var(--beam);justify-content:center">Cobertura</span>
+    <h1>Conheça nossa área de atuação</h1>
+    <p>A cada dia conectando muito mais pessoas.</p>
   </div>
 </section>
 
-<section class="slides" aria-label="Destaques">
+<section style="padding:90px 0">
   <div class="wrap">
-    <div class="slider" id="slider">
-      <img src="https://webmaistelecompe.com.br/slides/data1/images/slide1.png" alt="Banner 1" class="slide active">
-      <img src="https://webmaistelecompe.com.br/slides/data1/images/slide2.png" alt="Banner 2" class="slide">
-      <img src="https://webmaistelecompe.com.br/slides/data1/images/slide3.png" alt="Banner 3" class="slide">
-      <div class="slider-dots" id="sliderDots"></div>
+    <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="eyebrow" style="justify-content:center">Onde estamos</span>
+      <h2>Verifique se a fibra já chegou até você</h2>
+      <p>Nossa rede está em expansão constante. Consulte a disponibilidade no seu endereço e faça parte da WEB+ TELECOM.</p>
     </div>
-  </div>
-</section>
-
-<section class="quick">
-  <div class="wrap quick-grid">
-    <div class="qcard reveal">
-      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-01.png" alt="Central do Cliente" style="width:34px"></div>
-      <h4>Central do Cliente</h4>
-      <p>Boletos, relatórios, dados cadastrais e muito mais — tudo em um só lugar.</p>
-      <a href="https://webmaistelecompe.com.br/central">Ir para a Central →</a>
-    </div>
-    <div class="qcard reveal" style="transition-delay:.08s">
-      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-04.png" alt="Contrato de Serviço" style="width:34px"></div>
-      <h4>Contrato de Serviço</h4>
-      <p>Leia e imprima nosso contrato de prestação de serviço quando quiser.</p>
-      <a href="https://webmaistelecompe.com.br/contrato.hhvm">Visualizar e imprimir →</a>
-    </div>
-    <div class="qcard reveal" style="transition-delay:.16s">
-      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-03.png" alt="Teste de Velocidade" style="width:34px"></div>
-      <h4>Teste de Velocidade</h4>
-      <p>Ferramenta para você medir a velocidade real da sua internet.</p>
-      <a href="https://www.speedtest.net/pt" target="_blank" rel="noopener">Testar velocidade →</a>
-    </div>
-    <div class="qcard reveal" style="transition-delay:.24s">
-      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-02.png" alt="Faça seu Cadastro" style="width:34px"></div>
-      <h4>Faça seu Cadastro</h4>
-      <p>Escolha o plano ideal e cadastre-se. Entraremos em contato em breve.</p>
-      <a href="cadastro.html">Cadastre-se →</a>
-    </div>
-  </div>
-</section>
-
-<section class="strip">
-  <div class="wrap strip-grid">
-    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/fibra.svg" alt="" style="width:22px"></span> Internet Fibra Óptica</div>
-    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/atendimento.svg" alt="" style="width:22px"></span> Atendimento Descomplicado</div>
-    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/navegacao.svg" alt="" style="width:22px"></span> Navegue sem Limites</div>
-    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/taxa.svg" alt="" style="width:22px"></span> Suporte Técnico</div>
-    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/wifi.svg" alt="" style="width:22px"></span> Consultar Disponibilidade</div>
-  </div>
-</section>
-
-<section class="plans" id="planos">
-  <div class="wrap">
-    <div class="section-head reveal" style="display:flex;align-items:flex-start;gap:24px">
-      <img src="https://webmaistelecompe.com.br/images/rocket.png" alt="" style="width:72px;flex-shrink:0" class="rocket-head">
-      <div>
-        <span class="eyebrow">Nossos planos</span>
-        <h2>Chegou na sua região o plano ideal para você</h2>
-        <p>Os melhores planos para te deixar mega conectado com o mundo — velocidade de verdade, sem pegadinha.</p>
-      </div>
-    </div>
-    <div class="plans-grid">
-      <article class="plan reveal">
-        <span class="badge"><img src="https://webmaistelecompe.com.br/images/rocket.svg" alt="" style="width:13px;vertical-align:-2px;margin-right:5px">O mais vendido</span>
-        <div class="mb">150 <small>MEGA</small></div>
-        <p class="desc">Super velocidade com o menor preço</p>
-        <div class="val"><strong>R$ 60</strong><span>,00/mês</span></div>
-        <p class="fine">*Pagando até o vencimento.</p>
-        <ul>
-          <li>Wi-Fi incluso</li>
-          <li>Instalação rápida</li>
-          <li>Suporte técnico</li>
-        </ul>
-        <a href="cadastro.html" class="btn btn-primary">Eu quero</a>
-      </article>
-      <article class="plan featured reveal" style="transition-delay:.08s">
-        <span class="badge"><img src="https://webmaistelecompe.com.br/images/rocket2.svg" alt="" style="width:13px;vertical-align:-2px;margin-right:5px">Melhor custo-benefício</span>
-        <div class="mb">350 <small>MEGA</small></div>
-        <p class="desc">Mais velocidade com ótimo preço</p>
-        <div class="val"><strong>R$ 80</strong><span>,00/mês</span></div>
-        <p class="fine">*Pagando até o vencimento.</p>
-        <ul>
-          <li>Wi-Fi incluso</li>
-          <li>Streaming em alta resolução</li>
-          <li>Vários dispositivos conectados</li>
-        </ul>
-        <a href="cadastro.html" class="btn btn-primary">Eu quero</a>
-      </article>
-      <article class="plan reveal" style="transition-delay:.16s">
-        <div class="mb">500 <small>MEGA</small></div>
-        <p class="desc">Multiconectado, com máxima velocidade</p>
-        <div class="val"><strong>R$ 100</strong><span>,00/mês</span></div>
-        <p class="fine">*Pagando até o vencimento.</p>
-        <ul>
-          <li>Wi-Fi incluso</li>
-          <li>Ideal para home office</li>
-          <li>Downloads ultrarrápidos</li>
-        </ul>
-        <a href="cadastro.html" class="btn btn-primary">Eu quero</a>
-      </article>
-      <article class="plan reveal" style="transition-delay:.24s">
-        <span class="badge"><img src="https://webmaistelecompe.com.br/images/rocket2.svg" alt="" style="width:13px;vertical-align:-2px;margin-right:5px">Plano gamer</span>
-        <div class="mb">1 <small>GIGA</small></div>
-        <p class="desc">Desempenho máximo para jogar online</p>
-        <div class="val"><strong>R$ 150</strong><span>,00/mês</span></div>
-        <p class="fine">*Pagando até o vencimento.</p>
-        <ul>
-          <li>Baixa latência para jogos</li>
-          <li>Wi-Fi de alta performance</li>
-          <li>Prioridade no suporte</li>
-        </ul>
-        <a href="cadastro.html" class="btn btn-primary">Eu quero</a>
-      </article>
-    </div>
-    <div class="plans-more"><a href="planos.html">Conheça todos os nossos planos →</a></div>
-  </div>
-</section>
-
-<section class="fibra" id="fibra">
-  <div class="wrap fibra-grid">
-    <div class="reveal">
-      <span class="eyebrow" style="color:var(--beam)">Experimente</span>
-      <h2>O mix de velocidade da <em>fibra óptica</em></h2>
-      <div class="plus"><span>+</span>Velocidade <span>+</span>Qualidade <span>+</span>Estabilidade</div>
-      <p style="color:#B9C0E4;max-width:440px">Nossa satisfação se resume em exceder as expectativas e levar alegria com a melhor internet!</p>
-      <img src="https://webmaistelecompe.com.br/images/experimente.png" alt="Experimente a fibra óptica" style="max-width:380px;width:100%;margin-top:28px;display:block">
-    </div>
-    <div class="benefits">
-      <div class="benefit reveal"><div class="n">↓</div><p><strong>Baixe arquivos mais rápido</strong> e assista vídeos com muito mais resolução</p></div>
-      <div class="benefit reveal" style="transition-delay:.07s"><div class="n">🎮</div><p><strong>Jogue online</strong> com mais desempenho e velocidade</p></div>
-      <div class="benefit reveal" style="transition-delay:.14s"><div class="n">📤</div><p><strong>Compartilhe fotos e vídeos</strong> com mais rapidez e segurança</p></div>
-      <div class="benefit reveal" style="transition-delay:.21s"><div class="n">📱</div><p><strong>Acesse de vários dispositivos</strong> ao mesmo tempo, sem travar</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="app" id="app">
-  <div class="wrap app-grid">
-    <div class="reveal">
-      <span class="eyebrow">Baixe nosso app</span>
-      <h2>Sua assinatura na palma da mão</h2>
-      <p>Gerencie com mais facilidade sua assinatura: boletos, faturas, dados cadastrais e suporte. Baixe agora mesmo nosso aplicativo.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.app.w6588fd80e757b99f6f036d52" target="_blank" rel="noopener" class="btn btn-primary">▶ Download via Google Play</a>
-    </div>
-    <div class="reveal" style="text-align:center">
-      <img src="https://webmaistelecompe.com.br/images/apps.png" alt="Aplicativo WEB+ TELECOM" style="max-width:420px;width:100%">
+    <img src="https://webmaistelecompe.com.br/images/mapa.png" alt="Mapa da área de cobertura" class="map-big reveal">
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="https://wa.me/558184824616?text=Ol%C3%A1!%20Quero%20consultar%20a%20disponibilidade%20de%20cobertura%20no%20meu%20endere%C3%A7o." target="_blank" rel="noopener" class="btn btn-whats">💬 Consultar disponibilidade no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -583,10 +522,10 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
     <div>
       <img src="https://webmaistelecompe.com.br/images/mapa.png" alt="Mapa de cobertura" style="width:100%;border-radius:18px;margin-bottom:24px" class="reveal">
       <div class="pill-grid">
-      <div class="pill reveal"><h4>⚙️ Praticidade</h4><p>Central do cliente e app para resolver tudo sem sair de casa.</p></div>
-      <div class="pill reveal" style="transition-delay:.07s"><h4>🛟 Suporte eficiente</h4><p>Equipe qualificada pronta para resolver rápido.</p></div>
-      <div class="pill reveal" style="transition-delay:.14s"><h4>📡 Cobertura ampla</h4><p>Consulte a disponibilidade na sua região.</p></div>
-      <div class="pill reveal" style="transition-delay:.21s"><h4>💰 Economia</h4><p>Planos com o melhor custo-benefício da região.</p></div>
+        <div class="pill reveal"><h4>⚙️ Praticidade</h4><p>Central do cliente e app para resolver tudo sem sair de casa.</p></div>
+        <div class="pill reveal" style="transition-delay:.07s"><h4>🛟 Suporte eficiente</h4><p>Equipe qualificada pronta para resolver rápido.</p></div>
+        <div class="pill reveal" style="transition-delay:.14s"><h4>📡 Cobertura ampla</h4><p>Consulte a disponibilidade na sua região.</p></div>
+        <div class="pill reveal" style="transition-delay:.21s"><h4>💰 Economia</h4><p>Planos com o melhor custo-benefício da região.</p></div>
       </div>
     </div>
   </div>
@@ -640,37 +579,15 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
 <a href="https://wa.me/558184824616" target="_blank" rel="noopener" class="float-whats" aria-label="Falar no WhatsApp">💬</a>
 
 <script>
-// menu mobile
 const toggle=document.getElementById('menuToggle');
 const links=document.getElementById('navLinks');
 toggle.addEventListener('click',()=>links.classList.toggle('open'));
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-
-// slider
-const slides=[...document.querySelectorAll('.slider .slide')];
-const dotsWrap=document.getElementById('sliderDots');
-let cur=0;
-slides.forEach((_,i)=>{
-  const b=document.createElement('button');
-  b.setAttribute('aria-label','Slide '+(i+1));
-  if(i===0)b.classList.add('on');
-  b.addEventListener('click',()=>go(i));
-  dotsWrap.appendChild(b);
-});
-function go(i){
-  slides[cur].classList.remove('active');
-  dotsWrap.children[cur].classList.remove('on');
-  cur=i;
-  slides[cur].classList.add('active');
-  dotsWrap.children[cur].classList.add('on');
-}
-setInterval(()=>go((cur+1)%slides.length),5000);
-
-// reveal on scroll
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+
 </body>
 </html>
