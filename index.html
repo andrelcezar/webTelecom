@@ -141,6 +141,16 @@ header{
 .gauge::before{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--ink-2)}
 .gauge b{position:relative;font-family:'Sora',sans-serif;font-size:.78rem;color:var(--beam);text-align:center;line-height:1.25}
 
+/* ---------- Slides ---------- */
+.slides{padding:36px 0 0}
+.slider{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+.slider .slide{display:none;width:100%;border-radius:22px}
+.slider .slide.active{display:block;animation:fadeSlide .6s ease}
+@keyframes fadeSlide{from{opacity:0}to{opacity:1}}
+.slider-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.slider-dots button{width:10px;height:10px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.5)}
+.slider-dots button.on{background:var(--beam)}
+
 /* ---------- Quick access ---------- */
 .quick{padding:20px 0 90px}
 .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:-40px;position:relative;z-index:2}
@@ -357,16 +367,17 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo">WEB<span>+</span> TELECOM</a>
+    <a href="https://webmaistelecompe.com.br/index.hhvm" class="logo"><img src="https://webmaistelecompe.com.br/images/logo.png" alt="WEB+ TELECOM" style="height:44px;display:block"></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#">Home</a></li>
-      <li><a href="#planos">Planos</a></li>
-      <li><a href="#fibra">Fibra Óptica</a></li>
-      <li><a href="#app">App</a></li>
-      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://webmaistelecompe.com.br/index.hhvm">Home</a></li>
+      <li><a href="https://webmaistelecompe.com.br/empresa.hhvm">Empresa</a></li>
+      <li><a href="https://webmaistelecompe.com.br/planos.hhvm">Planos</a></li>
+      <li><a href="https://webmaistelecompe.com.br/cobertura.hhvm">Cobertura</a></li>
+      <li><a href="https://webmaistelecompe.com.br/faq.hhvm">FAQ</a></li>
+      <li><a href="https://webmaistelecompe.com.br/fale.hhvm">Contato</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="#" class="boleto-link">2ª Via do Boleto</a>
+      <a href="https://webmaistelecompe.com.br/central" class="boleto-link">2ª Via do Boleto</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
@@ -389,7 +400,7 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
       <h1>Navegue na <em>velocidade da luz</em>, sem limites.</h1>
       <p>Ultra velocidade, estabilidade e atendimento descomplicado para você ficar mega conectado com o mundo. Tire suas dúvidas ou faça sua assinatura agora mesmo pelo WhatsApp!</p>
       <div class="hero-actions">
-        <a href="#" class="btn btn-whats">💬 Chamar no WhatsApp</a>
+        <a href="https://wa.me/558184824616" target="_blank" rel="noopener" class="btn btn-whats">💬 Chamar no WhatsApp</a>
         <a href="#planos" class="btn btn-ghost">Ver planos</a>
       </div>
     </div>
@@ -399,7 +410,18 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
       <div class="speed">150 <small>MEGA</small></div>
       <p class="price">por <strong>R$ 60</strong>/mês</p>
       <p class="fine">*Pagando até o vencimento.</p>
-      <a href="#" class="btn btn-primary">Eu quero este plano</a>
+      <a href="https://webmaistelecompe.com.br/cadastro.hhvm" class="btn btn-primary">Eu quero este plano</a>
+    </div>
+  </div>
+</section>
+
+<section class="slides" aria-label="Destaques">
+  <div class="wrap">
+    <div class="slider" id="slider">
+      <img src="https://webmaistelecompe.com.br/slides/data1/images/slide1.png" alt="Banner 1" class="slide active">
+      <img src="https://webmaistelecompe.com.br/slides/data1/images/slide2.png" alt="Banner 2" class="slide">
+      <img src="https://webmaistelecompe.com.br/slides/data1/images/slide3.png" alt="Banner 3" class="slide">
+      <div class="slider-dots" id="sliderDots"></div>
     </div>
   </div>
 </section>
@@ -407,52 +429,55 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
 <section class="quick">
   <div class="wrap quick-grid">
     <div class="qcard reveal">
-      <div class="ic">🧾</div>
+      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-01.png" alt="Central do Cliente" style="width:34px"></div>
       <h4>Central do Cliente</h4>
       <p>Boletos, relatórios, dados cadastrais e muito mais — tudo em um só lugar.</p>
-      <a href="#">Ir para a Central →</a>
+      <a href="https://webmaistelecompe.com.br/central">Ir para a Central →</a>
     </div>
     <div class="qcard reveal" style="transition-delay:.08s">
-      <div class="ic">📄</div>
+      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-04.png" alt="Contrato de Serviço" style="width:34px"></div>
       <h4>Contrato de Serviço</h4>
       <p>Leia e imprima nosso contrato de prestação de serviço quando quiser.</p>
-      <a href="#">Visualizar e imprimir →</a>
+      <a href="https://webmaistelecompe.com.br/contrato.hhvm">Visualizar e imprimir →</a>
     </div>
     <div class="qcard reveal" style="transition-delay:.16s">
-      <div class="ic">⚡</div>
+      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-03.png" alt="Teste de Velocidade" style="width:34px"></div>
       <h4>Teste de Velocidade</h4>
       <p>Ferramenta para você medir a velocidade real da sua internet.</p>
       <a href="https://www.speedtest.net/pt" target="_blank" rel="noopener">Testar velocidade →</a>
     </div>
     <div class="qcard reveal" style="transition-delay:.24s">
-      <div class="ic">📝</div>
+      <div class="ic"><img src="https://webmaistelecompe.com.br/images/icon-02.png" alt="Faça seu Cadastro" style="width:34px"></div>
       <h4>Faça seu Cadastro</h4>
       <p>Escolha o plano ideal e cadastre-se. Entraremos em contato em breve.</p>
-      <a href="#">Cadastre-se →</a>
+      <a href="https://webmaistelecompe.com.br/cadastro.hhvm">Cadastre-se →</a>
     </div>
   </div>
 </section>
 
 <section class="strip">
   <div class="wrap strip-grid">
-    <div class="strip-item"><span class="dot">🔆</span> Internet Fibra Óptica</div>
-    <div class="strip-item"><span class="dot">🤝</span> Atendimento Descomplicado</div>
-    <div class="strip-item"><span class="dot">🌐</span> Navegue sem Limites</div>
-    <div class="strip-item"><span class="dot">🛠️</span> Suporte Técnico</div>
-    <div class="strip-item"><span class="dot">📍</span> Consultar Disponibilidade</div>
+    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/fibra.svg" alt="" style="width:22px"></span> Internet Fibra Óptica</div>
+    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/atendimento.svg" alt="" style="width:22px"></span> Atendimento Descomplicado</div>
+    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/navegacao.svg" alt="" style="width:22px"></span> Navegue sem Limites</div>
+    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/taxa.svg" alt="" style="width:22px"></span> Suporte Técnico</div>
+    <div class="strip-item"><span class="dot"><img src="https://webmaistelecompe.com.br/images/wifi.svg" alt="" style="width:22px"></span> Consultar Disponibilidade</div>
   </div>
 </section>
 
 <section class="plans" id="planos">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Nossos planos</span>
-      <h2>Chegou na sua região o plano ideal para você</h2>
-      <p>Os melhores planos para te deixar mega conectado com o mundo — velocidade de verdade, sem pegadinha.</p>
+    <div class="section-head reveal" style="display:flex;align-items:flex-start;gap:24px">
+      <img src="https://webmaistelecompe.com.br/images/rocket.png" alt="" style="width:72px;flex-shrink:0" class="rocket-head">
+      <div>
+        <span class="eyebrow">Nossos planos</span>
+        <h2>Chegou na sua região o plano ideal para você</h2>
+        <p>Os melhores planos para te deixar mega conectado com o mundo — velocidade de verdade, sem pegadinha.</p>
+      </div>
     </div>
     <div class="plans-grid">
       <article class="plan reveal">
-        <span class="badge">O mais vendido</span>
+        <span class="badge"><img src="https://webmaistelecompe.com.br/images/rocket.svg" alt="" style="width:13px;vertical-align:-2px;margin-right:5px">O mais vendido</span>
         <div class="mb">150 <small>MEGA</small></div>
         <p class="desc">Super velocidade com o menor preço</p>
         <div class="val"><strong>R$ 60</strong><span>,00/mês</span></div>
@@ -462,10 +487,10 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
           <li>Instalação rápida</li>
           <li>Suporte técnico</li>
         </ul>
-        <a href="#" class="btn btn-primary">Eu quero</a>
+        <a href="https://webmaistelecompe.com.br/cadastro.hhvm" class="btn btn-primary">Eu quero</a>
       </article>
       <article class="plan featured reveal" style="transition-delay:.08s">
-        <span class="badge">Melhor custo-benefício</span>
+        <span class="badge"><img src="https://webmaistelecompe.com.br/images/rocket2.svg" alt="" style="width:13px;vertical-align:-2px;margin-right:5px">Melhor custo-benefício</span>
         <div class="mb">350 <small>MEGA</small></div>
         <p class="desc">Mais velocidade com ótimo preço</p>
         <div class="val"><strong>R$ 80</strong><span>,00/mês</span></div>
@@ -475,7 +500,7 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
           <li>Streaming em alta resolução</li>
           <li>Vários dispositivos conectados</li>
         </ul>
-        <a href="#" class="btn btn-primary">Eu quero</a>
+        <a href="https://webmaistelecompe.com.br/cadastro.hhvm" class="btn btn-primary">Eu quero</a>
       </article>
       <article class="plan reveal" style="transition-delay:.16s">
         <div class="mb">500 <small>MEGA</small></div>
@@ -487,10 +512,10 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
           <li>Ideal para home office</li>
           <li>Downloads ultrarrápidos</li>
         </ul>
-        <a href="#" class="btn btn-primary">Eu quero</a>
+        <a href="https://webmaistelecompe.com.br/cadastro.hhvm" class="btn btn-primary">Eu quero</a>
       </article>
       <article class="plan reveal" style="transition-delay:.24s">
-        <span class="badge">Plano gamer</span>
+        <span class="badge"><img src="https://webmaistelecompe.com.br/images/rocket2.svg" alt="" style="width:13px;vertical-align:-2px;margin-right:5px">Plano gamer</span>
         <div class="mb">1 <small>GIGA</small></div>
         <p class="desc">Desempenho máximo para jogar online</p>
         <div class="val"><strong>R$ 150</strong><span>,00/mês</span></div>
@@ -500,10 +525,10 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
           <li>Wi-Fi de alta performance</li>
           <li>Prioridade no suporte</li>
         </ul>
-        <a href="#" class="btn btn-primary">Eu quero</a>
+        <a href="https://webmaistelecompe.com.br/cadastro.hhvm" class="btn btn-primary">Eu quero</a>
       </article>
     </div>
-    <div class="plans-more"><a href="#">Conheça todos os nossos planos →</a></div>
+    <div class="plans-more"><a href="https://webmaistelecompe.com.br/planos.hhvm">Conheça todos os nossos planos →</a></div>
   </div>
 </section>
 
@@ -514,6 +539,7 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
       <h2>O mix de velocidade da <em>fibra óptica</em></h2>
       <div class="plus"><span>+</span>Velocidade <span>+</span>Qualidade <span>+</span>Estabilidade</div>
       <p style="color:#B9C0E4;max-width:440px">Nossa satisfação se resume em exceder as expectativas e levar alegria com a melhor internet!</p>
+      <img src="https://webmaistelecompe.com.br/images/experimente.png" alt="Experimente a fibra óptica" style="max-width:380px;width:100%;margin-top:28px;display:block">
     </div>
     <div class="benefits">
       <div class="benefit reveal"><div class="n">↓</div><p><strong>Baixe arquivos mais rápido</strong> e assista vídeos com muito mais resolução</p></div>
@@ -532,14 +558,8 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
       <p>Gerencie com mais facilidade sua assinatura: boletos, faturas, dados cadastrais e suporte. Baixe agora mesmo nosso aplicativo.</p>
       <a href="https://play.google.com/store/apps/details?id=com.app.w6588fd80e757b99f6f036d52" target="_blank" rel="noopener" class="btn btn-primary">▶ Download via Google Play</a>
     </div>
-    <div class="phone reveal" aria-hidden="true">
-      <div class="screen">
-        <div class="bar w60"></div>
-        <div class="card-mini"><b>150 Mega</b><span>Sua fatura vence em 10 dias</span></div>
-        <div class="row"><div class="tile"></div><div class="tile"></div></div>
-        <div class="bar"></div>
-        <div class="bar w60"></div>
-      </div>
+    <div class="reveal" style="text-align:center">
+      <img src="https://webmaistelecompe.com.br/images/apps.png" alt="Aplicativo WEB+ TELECOM" style="max-width:420px;width:100%">
     </div>
   </div>
 </section>
@@ -558,22 +578,26 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
         <div class="ic">✉️</div>
         <div><b>contato@webmaistelecompe.com.br</b><span>Responderemos o quanto antes</span></div>
       </div>
-      <a href="#" class="btn btn-whats" style="margin-top:10px">💬 Chamar no WhatsApp</a>
+      <a href="https://wa.me/558184824616" target="_blank" rel="noopener" class="btn btn-whats" style="margin-top:10px">💬 Chamar no WhatsApp</a>
     </div>
-    <div class="pill-grid">
+    <div>
+      <img src="https://webmaistelecompe.com.br/images/mapa.png" alt="Mapa de cobertura" style="width:100%;border-radius:18px;margin-bottom:24px" class="reveal">
+      <div class="pill-grid">
       <div class="pill reveal"><h4>⚙️ Praticidade</h4><p>Central do cliente e app para resolver tudo sem sair de casa.</p></div>
       <div class="pill reveal" style="transition-delay:.07s"><h4>🛟 Suporte eficiente</h4><p>Equipe qualificada pronta para resolver rápido.</p></div>
       <div class="pill reveal" style="transition-delay:.14s"><h4>📡 Cobertura ampla</h4><p>Consulte a disponibilidade na sua região.</p></div>
       <div class="pill reveal" style="transition-delay:.21s"><h4>💰 Economia</h4><p>Planos com o melhor custo-benefício da região.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="cta-final">
   <div class="wrap reveal">
+    <img src="https://webmaistelecompe.com.br/images/logo2.png" alt="WEB+ TELECOM" style="height:54px;margin-bottom:22px">
     <h2>Ainda está com <em>dúvidas?</em> Chame-nos no WhatsApp!</h2>
     <p>Tire suas dúvidas ou faça sua assinatura agora mesmo.</p>
-    <a href="#" class="btn btn-whats">💬 Chamar no WhatsApp</a>
+    <a href="https://wa.me/558184824616" target="_blank" rel="noopener" class="btn btn-whats">💬 Chamar no WhatsApp</a>
   </div>
 </section>
 
@@ -581,8 +605,8 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <span class="logo">WEB<span style="background:linear-gradient(90deg,var(--beam),var(--beam-2));-webkit-background-clip:text;background-clip:text;color:transparent">+</span> TELECOM</span>
-        <p style="margin-top:12px;font-size:.9rem;max-width:280px">Curta nossas páginas nas redes sociais.</p>
+        <img src="https://webmaistelecompe.com.br/images/logo3.png" alt="WEB+ TELECOM" style="height:52px;display:block">
+        <p style="margin-top:16px;font-size:.9rem;max-width:280px">Curta nossas páginas nas redes sociais.</p>
         <div class="socials">
           <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
           <a href="https://www.instagram.com/web__telecom" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
@@ -590,25 +614,30 @@ footer{background:var(--ink);color:#8B93B8;padding:60px 0 30px}
       </div>
       <div class="foot-links">
         <b>Navegação</b>
-        <a href="#">Home</a>
-        <a href="#planos">Planos</a>
-        <a href="#contato">Contato</a>
-        <a href="#">2ª Via do Boleto</a>
+        <a href="https://webmaistelecompe.com.br/index.hhvm">Home</a>
+        <a href="https://webmaistelecompe.com.br/empresa.hhvm">Empresa</a>
+        <a href="https://webmaistelecompe.com.br/planos.hhvm">Planos</a>
+        <a href="https://webmaistelecompe.com.br/cobertura.hhvm">Cobertura</a>
+        <a href="https://webmaistelecompe.com.br/faq.hhvm">FAQ</a>
+        <a href="https://webmaistelecompe.com.br/fale.hhvm">Contato</a>
       </div>
       <div class="foot-links">
         <b>Cliente</b>
-        <a href="#">Central do Cliente</a>
-        <a href="#">Contrato de Serviço</a>
+        <a href="https://webmaistelecompe.com.br/central">Central do Cliente / 2ª Via do Boleto</a>
+        <a href="https://webmaistelecompe.com.br/contrato.hhvm">Contrato de Serviço</a>
         <a href="https://www.speedtest.net/pt" target="_blank" rel="noopener">Teste de Velocidade</a>
-        <a href="#">Cadastro</a>
+        <a href="https://webmaistelecompe.com.br/cadastro.hhvm">Cadastro</a>
       </div>
-      <div class="anatel">Serviço de Comunicação Multimídia (SCM) prestado em conformidade com a regulamentação da ANATEL.</div>
+      <div class="anatel">
+        <img src="https://webmaistelecompe.com.br/images/anatel.png" alt="ANATEL" style="height:56px;display:block;margin-bottom:12px">
+        Serviço de Comunicação Multimídia (SCM) prestado em conformidade com a regulamentação da ANATEL.
+      </div>
     </div>
     <div class="copy">© 2026 — WEB+ TELECOM — Todos os direitos reservados.</div>
   </div>
 </footer>
 
-<a href="#" class="float-whats" aria-label="Falar no WhatsApp">💬</a>
+<a href="https://wa.me/558184824616" target="_blank" rel="noopener" class="float-whats" aria-label="Falar no WhatsApp">💬</a>
 
 <script>
 // menu mobile
@@ -616,6 +645,26 @@ const toggle=document.getElementById('menuToggle');
 const links=document.getElementById('navLinks');
 toggle.addEventListener('click',()=>links.classList.toggle('open'));
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// slider
+const slides=[...document.querySelectorAll('.slider .slide')];
+const dotsWrap=document.getElementById('sliderDots');
+let cur=0;
+slides.forEach((_,i)=>{
+  const b=document.createElement('button');
+  b.setAttribute('aria-label','Slide '+(i+1));
+  if(i===0)b.classList.add('on');
+  b.addEventListener('click',()=>go(i));
+  dotsWrap.appendChild(b);
+});
+function go(i){
+  slides[cur].classList.remove('active');
+  dotsWrap.children[cur].classList.remove('on');
+  cur=i;
+  slides[cur].classList.add('active');
+  dotsWrap.children[cur].classList.add('on');
+}
+setInterval(()=>go((cur+1)%slides.length),5000);
 
 // reveal on scroll
 const io=new IntersectionObserver(entries=>{
